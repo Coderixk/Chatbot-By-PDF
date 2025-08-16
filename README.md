@@ -1,3 +1,4 @@
+
 A Streamlit application that allows users to chat with their PDF documents using Groq API for generating responses.
 
 ## Features
@@ -93,3 +94,7 @@ You can configure the following settings in the application:
 
 - `GROQ_API_KEY`: Your Groq API key (required for generating responses)
 - `OPENAI_API_KEY`: Your OpenAI API key (required for RAGAS evaluation)
+
+# Chatbot-By-PDF
+Project Skripsi
+
