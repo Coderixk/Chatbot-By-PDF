@@ -6,6 +6,17 @@ __pycache__/
 # C extensions
 *.so
 
+# Environment variables
+.env
+
+# Virtual environments
+.venv/
+venv/
+
+# Streamlit secrets (API keys dsb)
+.streamlit/secrets.toml
+
+
 # Distribution / packaging
 .Python
 build/
