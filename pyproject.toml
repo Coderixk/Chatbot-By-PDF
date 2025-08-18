@@ -18,4 +18,8 @@ dependencies = [
     "llama-index>=0.12.33",
     "llama-index-llms-groq>=0.3.1",
     "rapidfuzz>=3.13.0",
+    "langchain>=0.3.24",
+    "langchain-community>=0.3.22",
+    "langchain-groq>=0.3.7",
+    "pandas>=2.2.3",
 ]
