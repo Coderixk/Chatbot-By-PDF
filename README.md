@@ -1,3 +1,5 @@
+# Chatbot-By-PDF
+Project Skripsi
 
 A Streamlit application that allows users to chat with their PDF documents using Groq API for generating responses.
 
@@ -33,7 +35,4 @@ A Streamlit application that allows users to chat with their PDF documents using
 - Sentence Transformers (for embeddings)
 - Groq API key (for generating responses)
 
-
-# Chatbot-By-PDF
-Project Skripsi
 
