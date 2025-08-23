@@ -173,14 +173,14 @@ def display_pdf(file_b64: str):
 
 # -------------------- Sidebar (Chat Evaluation only) --------------------
 def render_sidebar():
-    st.sidebar.subheader("Settings")
+    st.sidebar.subheader("⚙️Settings")
 
     # Kunci ke zero-shot (tanpa opsi)
     st.session_state.approach = "zero-shot"
 
     # jumlah chunk untuk retrieval
     num_chunks = st.sidebar.slider(
-        "Number of chunks to retrieve", 1, 10, st.session_state.num_chunks
+        "Jumlah Chunk yang ingin di ambil", 1, 10, st.session_state.num_chunks
     )
     if num_chunks != st.session_state.num_chunks:
         st.session_state.num_chunks = num_chunks
@@ -190,7 +190,7 @@ def render_sidebar():
     )
 
     # --------- Chat Evaluation ----------
-    st.sidebar.subheader("RAGAS Evaluation (Chat)")
+    st.sidebar.subheader("🧠RAGAS Evaluation (Chat)")
 
     run_eval = st.sidebar.button(
         "Run RAGAS Evaluation",
@@ -245,30 +245,30 @@ def render_sidebar():
 def main():
     init_session_state()
 
-    st.title("PDF Q&A Assistant")
+    st.title("🤖 Chatbot PDF")
     render_sidebar()
 
     col1, col2 = st.columns([1, 2])
 
     with col1:
-        st.subheader("Upload PDF")
-        uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+        st.subheader("📰 Unggah File PDF")
+        uploaded_file = st.file_uploader("Pilih File:", type="pdf")
 
         if uploaded_file is not None:
             process_pdf(uploaded_file)
 
             if st.session_state.file_name:
                 if st.session_state.processing_complete:
-                    st.success("PDF indexed and ready for questions!")
+                    st.success("File PDF sudah di proses dan siap untuk ditanyakan!")
                 else:
-                    st.warning("PDF is still being processed. Please wait.")
+                    st.warning("PDF sedang di proes. mohon tunggu")
 
             if st.session_state.processing_complete:
                 base64_pdf = base64.b64encode(uploaded_file.getvalue()).decode("utf-8")
                 display_pdf(base64_pdf)
 
     with col2:
-        st.subheader("Chat with your PDF")
+        st.subheader("Tanya jawab Dengan AI")
 
         # riwayat chat
         chat_container = st.container()
@@ -282,7 +282,7 @@ def main():
         # form input
         with st.form("query_form", clear_on_submit=True):
             user_query = st.text_input(
-                "Ask a question about your PDF:",
+                "Berikan Pertanyaan seputar isi PDF:",
                 disabled=not st.session_state.processing_complete,
             )
             submit = st.form_submit_button("Submit")
