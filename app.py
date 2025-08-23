@@ -186,7 +186,7 @@ def render_sidebar():
         st.session_state.num_chunks = num_chunks
 
     st.sidebar.info(
-        "This app uses Groq API with the meta-llama/llama-4-scout-17b-16e-instruct model."
+        "Aplikasi ini menggunakan Groq API dengan model Llama 4."
     )
 
     # --------- Chat Evaluation ----------
